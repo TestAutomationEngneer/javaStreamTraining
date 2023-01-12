@@ -1,6 +1,8 @@
 import lombok.extern.slf4j.Slf4j;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -8,6 +10,23 @@ import java.util.stream.IntStream;
 public class Run {
 
     //Training for java stream
+
+    /*
+    https://www.samouczekprogramisty.pl/strumienie-w-jezyku-java/
+
+    operacje terminalne, kończące strumień
+    forEach – wykonuje zadaną operację dla każdego elementu,
+
+    count – zwraca liczbę elementów w strumieniu,
+
+    allMatch – zwraca flagę informującą czy wszystkie elementy spełniają warunek.
+    Przestaje sprawdzać na pierwszym elemencie, który tego warunku nie spełnia,
+
+    collect – pozwala na utworzenie nowego typu na podstawie elementów strumienia.
+     Przy pomocy tej metody można na przykład utworzyć listę.
+      Klasa Collectors zawiera sporo gotowych implementacji.
+
+    * */
 
     public static void main(String[] args) {
 
@@ -34,7 +53,7 @@ public class Run {
 
         //Run.stream5(employeeList).forEach(System.out::println);
 
-        zadadnie14(employeeList);
+        zadadnie2();
 
     }
 
@@ -59,22 +78,35 @@ public class Run {
     }
 
 
-    //anyMatch - do poprawy
+    //anyMatch - zadanie domowe
     public static void zadadnie2() {
 
+        //wypisz na konsoli properties, ale jeśli propertes jest sensitive to zamiast warrtości wypisz ******
         String[] sensualKeys = {"login", "password"};
 
-        Map<String, Object> mojaMapa = new HashMap();
-        mojaMapa.put("login", "darek");
-        mojaMapa.put("password", "darek");
-        mojaMapa.put("title", "darek");
-        mojaMapa.put("url", "www.darek");
+        Map<String, String> properties = new HashMap();
+        properties.put("login", "Angelina");
+        properties.put("password", "angelinaInHollywood123");
+        properties.put("title", "Salt");
+        properties.put("url", "www.angelina.hollywood");
+        properties.put("errorMessage", "file has not been founded");
 
-        if (Arrays.stream(sensualKeys).anyMatch(mojaMapa.keySet().toString()::contains)) {
-            log.info("Loaded environment property: " + mojaMapa.keySet().toString() + " = " + "***********");
-        } else {
-            log.info("Loaded environment property: " + mojaMapa.keySet().toString() + " = " + mojaMapa.get(mojaMapa.keySet().toString()));
-        }
+        boolean isSensitive = Arrays.stream(sensualKeys).anyMatch(properties.keySet().toString()::contains);
+
+        System.out.println("Your properties: ");
+        properties.forEach((key, value) -> {
+            if ((isSensitive(key))) {
+                System.out.println(key + " : " + "********");
+            } else {
+                System.out.println(key + " : " + value);
+            }
+        });
+    }
+
+    private static boolean isSensitive(String key) {
+        String[] sensualKeys = {"login", "password", "url"};
+        boolean result = Arrays.stream(sensualKeys).anyMatch(s -> s.contains(key));
+        return result;
     }
 
     // stream, filter()
