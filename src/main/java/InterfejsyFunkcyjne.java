@@ -25,7 +25,7 @@ public class InterfejsyFunkcyjne {
 
 
 
-        // 1. IntStream operuje na prymitywnym tpie int
+        // 1. IntStream operuje na prymitywnym typie int
          //IntStream.range(0, 10).forEach(System.out::println);
 
         // 2. od 0-10
