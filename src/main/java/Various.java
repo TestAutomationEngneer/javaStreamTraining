@@ -67,11 +67,11 @@ public class Various {
         //6. Własny interfejs funkcyjny. Zobacz klase InterfejsBezLambdy żeby zobaczyć rożnicę.
         APIClient response;                             //1. Referencja do interfejsu
         response = () -> "This is response string";      //2. Zdefiniuj jak ma zadziałać jedyna metoda w interfejsie
-        System.out.println(response.sendRequest());      // 3. Uzyj metody odwołując sie do jej nazwy w interfejsie.
+        System.out.println(response.sendSomeRequest());      // 3. Uzyj metody odwołując sie do jej nazwy w interfejsie.
 
         //a teraz z InterfejsBezLambdy
         InterfejsBezLambdy interfejsBezLambdy = new InterfejsBezLambdy();
-        String s = interfejsBezLambdy.sendRequest();
+        String s = interfejsBezLambdy.sendSomeRequest();
         System.out.println(s);
 
     }

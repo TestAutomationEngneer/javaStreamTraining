@@ -1,6 +1,6 @@
 public class InterfejsBezLambdy implements APIClient {
     @Override
-    public String sendRequest() {
+    public String sendSomeRequest() {
         return "This is response string";
     }
 }
