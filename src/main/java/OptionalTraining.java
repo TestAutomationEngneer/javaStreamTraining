@@ -5,14 +5,14 @@ public class OptionalTraining {
 
         //1. Tworzenie Optionala z domyślną wartoscia
 
-//        var niespodzianka1 = Optional.ofNullable("willa").
-//                orElseGet(() ->"nagroda pocieszenia");
+        var niespodzianka1 = Optional.ofNullable("willa").
+                orElseGet(() ->"nagroda pocieszenia");
 //
-//        var niespodzianka2 = Optional.ofNullable(null).
-//                orElseGet(() ->"nagroda pocieszenia");
+        var niespodzianka2 = Optional.ofNullable(null).
+                orElseGet(() ->"nagroda pocieszenia");
 //
-//        System.out.println(niespodzianka1);
-//        System.out.println(niespodzianka2);
+        System.out.println(niespodzianka1);
+        System.out.println(niespodzianka2);
 
         //2. Tworzenie Optionala z błedem
 //        var niespodzianka3 = Optional.ofNullable(null).
