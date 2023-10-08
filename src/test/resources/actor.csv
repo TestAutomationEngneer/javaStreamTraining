@@ -1,0 +1,2 @@
+firstname, lastname, rating, isOscarPrized
+Json, ${lastname}, 6, true

@@ -119,7 +119,6 @@ public class Run {
                 .filter(pracownik -> pracownik.salary()  > 5000.00)
                 .map(pracownik -> pracownik.id() + " " + pracownik.firstName())
                 .forEach(System.out::println);
-
     }
 
     // stream, filter()
