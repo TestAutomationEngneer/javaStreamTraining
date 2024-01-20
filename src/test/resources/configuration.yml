@@ -1,0 +1,29 @@
+environments:
+  dev:
+    envName: dev
+    active: false
+    appUrl: https://www.selenium.dev/
+    websiteTitle: Selenium
+    yetAnotherParam: 4
+
+  test:
+    envName: test
+    active: false
+    appUrl: https://sii.pl/
+    websiteTitle: Rozwiązania i usługi IT, inżynierii i BPO - Sii Polska
+    yetAnotherParam: 4
+
+  prod:
+    envName: prod
+    active: true
+    appUrl: https://www.google.pl/
+    websiteTitle: Google
+    yetAnotherParam: 4
+    ssl: false
+
+browser:
+  name: chrome
+  attachScreenshot: false
+  headless: true
+  webElementTimeout: 60
+  isItTheBestBrowser: true

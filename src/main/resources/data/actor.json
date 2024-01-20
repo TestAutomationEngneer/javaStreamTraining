@@ -1,0 +1,8 @@
+{
+  "firstName": "Brad",
+  "lastName": "Pitt",
+  "rating": 12,
+  "oscarPrized": true,
+  "salary": 300,
+  "city": "Los Angeles"
+}
